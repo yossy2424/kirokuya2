@@ -1,0 +1,54 @@
+<div class="main">
+  <div class="inner">
+    <div class="form__wrapper">
+      <h2 class="page-heading">ユーザー新規登録</h2>
+
+      <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+
+        <div class="field">
+          <%= f.label :email, "メールアドレス" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, "パスワード（6文字以上）" %><br />
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation, "パスワード再入力" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :nickname, "ユーザー名" %><br />
+          <%= f.text_field :nickname %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :sex, '性別' %>
+          <%= f.select :sex, {'男性': 1, '女性': 2}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+        </div>
+
+        <div class="field">
+          <%= f.label :height, "身長" %><br />
+          <%= f.number_field :height, step: '0.1',class:'input_form' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :weight, "体重" %><br />
+          <%= f.number_field :weight, step: '0.1',class:'input_form' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :target_weight, "目標体重" %><br />
+          <%= f.number_field :target_weight, step: '0.1',class:'input_form' %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "新規登録", class: :form__btn  %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
