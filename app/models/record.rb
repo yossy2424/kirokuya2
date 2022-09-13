@@ -1,10 +1,9 @@
 class Record < ApplicationRecord
-  belong_to :user
+  belongs_to :user
   has_one :comments
 
-  validates :weight
-  validates :bady_fat_percentage
-  validates :record_month
-  validates :record_date
-  validates :user
+  validate :weight
+  validate :body_fat_percentage
+  validate :record_date
+  validate :user
 end

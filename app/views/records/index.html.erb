@@ -3,9 +3,9 @@
 <% if user_signed_in? %> <!-- ユーザーがログインしているか調べる -->
   <!-- ユーザーがログインしていた時の処理 -->
 
-  <h4> メールアドレス： <%= current_user.nickname %> </h4>
+  <h2>こんにちは、<%= current_user.nickname %>さん</h2>
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <!-- ログアウトをする -->
-  <%= link_to "体重を記録する", root_path, class: 'post'%>
+  <%= link_to "体重を記録する", new_record_path, class: 'post'%>
 <% else %>
   <!-- ユーザーがログインしていなかった時の処理 -->
   <h2> 現在ログインしていません </h2>

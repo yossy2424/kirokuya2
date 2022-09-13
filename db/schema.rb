@@ -15,8 +15,7 @@ ActiveRecord::Schema.define(version: 2022_09_12_014649) do
   create_table "records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.float "weight"
     t.float "body_fat_percentage"
-    t.date "record_month"
-    t.date "racord_date"
+    t.date "record_date"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
