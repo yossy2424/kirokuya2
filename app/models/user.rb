@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :record
+  has_one :calender
 
   validate :nickname
   validate :height
