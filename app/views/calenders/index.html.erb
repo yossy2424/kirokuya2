@@ -1,8 +1,9 @@
 <%= month_calendar calendars: @calendars do |date, calendars| %>
   <%= date %>
 
-  <% if @record.record_date == date %>
-    <div>体重：<%= @record.weight %></div>
+  <% record = @record.find_by(record_date: date)%>
+  <% if record != nil %>
+    <div>体重：<%= record.weight %></div>
   <% end %>
 
   <% calendars.each do |calendar| %>
