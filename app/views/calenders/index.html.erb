@@ -1,0 +1,15 @@
+<%= month_calendar calendars: @calendars do |date, calendars| %>
+  <%= date %>
+
+<% record = @record.find_by(record_date: date)%>
+  <% if record != nil %>
+    <div>体重：<%= record.weight %></div>
+    <div>体脂肪率:<%= record.body_fat_percentage %></div>
+  <% end %>
+
+  <% calendars.each do |calendar| %>
+    <div>
+      <%= calendar.name %>
+    </div>
+  <% end %>
+<% end %>

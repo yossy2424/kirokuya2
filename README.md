@@ -11,6 +11,7 @@
 | target_weight | float   | null: false               |
 
 has_many :records
+has_one :calender
 
 ## recordsテーブル
 

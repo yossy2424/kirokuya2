@@ -1,5 +1,6 @@
 class RecordsController < ApplicationController
   def index
+    @record =Record.find(current_user.id)
   end
 
   def new
