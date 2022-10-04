@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class GraphControllerTest < ActionDispatch::IntegrationTest
+class GraphTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

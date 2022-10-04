@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_13_085659) do
+ActiveRecord::Schema.define(version: 2022_09_28_021050) do
 
   create_table "calenders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "start_time"
@@ -20,6 +20,11 @@ ActiveRecord::Schema.define(version: 2022_09_13_085659) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["record_id"], name: "index_calenders_on_record_id"
     t.index ["user_id"], name: "index_calenders_on_user_id"
+  end
+
+  create_table "graphs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

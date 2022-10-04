@@ -6,6 +6,7 @@ class User < ApplicationRecord
   
   has_many :records
   has_one :calender
+  has_one :graph
 
   validate :nickname
   validate :height
