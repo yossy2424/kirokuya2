@@ -1,6 +1,6 @@
 class GraphsController < ApplicationController
+  before_action :authenticate_user!
   def index
-    @graph = Graph.new
     @record = Record.where(user_id: current_user.id)
   end
 end
