@@ -1,5 +1,4 @@
 <h1>体重記録アプリ</h1>
-
 <% if user_signed_in? %> <!-- ユーザーがログインしているか調べる -->
   <!-- ユーザーがログインしていた時の処理 -->
   <h2>こんにちは、<%= current_user.nickname %>さん</h2>
@@ -7,9 +6,4 @@
   <%= link_to "体重を記録する", new_record_path, class: 'post'%>
   <%= link_to "カレンダーを見る", record_calenders_path(@record.id), class: 'post' %>
   <%= link_to "グラフを見る", record_graphs_path(@record.id), class: 'post' %>
-<% else %>
-  <!-- ユーザーがログインしていなかった時の処理 -->
-  <h2> 現在ログインしていません </h2>
-  <%= link_to "ログイン", new_user_session_path, class: 'post' %> <!-- ログイン画面に移行する -->
-  <%= link_to "新規登録", new_user_registration_path, class: 'post' %> <!-- 新規登録画面に移行する -->
 <% end %>
