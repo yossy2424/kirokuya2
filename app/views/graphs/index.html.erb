@@ -1,1 +1,1 @@
-<%= line_chart @record.group_by_day(:record_date).count%>
+<%= line_chart @record.group_by_day(:record_date).sum(:weight),discrete: true%>
