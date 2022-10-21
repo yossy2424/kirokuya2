@@ -4,6 +4,8 @@
   <h2>こんにちは、<%= current_user.nickname %>さん</h2>
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <!-- ログアウトをする -->
   <%= link_to "体重を記録する", new_record_path, class: 'post'%>
-  <%= link_to "カレンダーを見る", record_calenders_path(@record.id), class: 'post' %>
-  <%= link_to "グラフを見る", record_graphs_path(@record.id), class: 'post' %>
+  <% if @record != nil %>
+    <%= link_to "カレンダーを見る", record_calenders_path(@record.id), class: 'post' %>
+    <%= link_to "グラフを見る", record_graphs_path(@record.id), class: 'post' %>
+  <% end %>
 <% end %>

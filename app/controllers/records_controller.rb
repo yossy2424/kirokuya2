@@ -1,6 +1,7 @@
 class RecordsController < ApplicationController
+  before_action :authenticate_user!
   def index
-    @record = Record.find(current_user.id)
+    @record = Record.find_by(user_id: current_user.id)
   end
 
   def new
