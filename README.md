@@ -7,11 +7,11 @@ https://kirokuya2.herokuapp.com/
 ## テスト用アカウント
 ・Basic認証パスワード:2222
 ・Basic認証ID:admin
-・メールアドレス:
-・パスワード:
+・メールアドレス:test@bbb.com
+・パスワード:aaaaaa111
 ## 利用方法
 ## 体重記録
-1.トップページからユーザー新規登録を行う。
+1.ユーザー新規登録を行う。
 2.体重を記録するボタンから、内容(日付、体重、体脂肪率、【コメント】)を入力し投稿する。
 ## カレンダーを見る
 1.カレンダーを見るボタンから確認することができる。
@@ -54,43 +54,3 @@ https://gyazo.com/28dbd0c3736a9e5567bfaf3863356e0b
 ・Visual Studio Code
 ## 工夫したポイント
 私はこのアプリを作る理由として努力が目に見える形で表現できる形で表現されるようなものを自分の手で作りたいと考えたからである。そのため客観的に努力を感じれるように折れ線グラフを導入し、また全体的に内容をパッと見れるようためのカレンダー機能の実装、まだ実装は出来ていないがそこにカロリーや運動内容をメモることができるコメント機能を実装する予定することで更なる実感を得れるであろう。またモチベーションを維持するためにユーザー同士での対戦機能の実装やダイエットする人同士のコミュニケーションする場などを取り入れていきたいと考えている。
-
-
-
-## usersテーブル
-
-| name          | string  | option                    |
-| ------------- | ------- | ------------------------- |
-| nickname      | string  | null: false               |
-| encrypted     | string  | null: false               |
-| height        | float   | null: false               |
-| email         | string  | null: false, unique: true |
-| sex_id        | integer | null: false               |
-| weight        | float   | null: false               |
-| target_weight | float   | null: false               |
-
-has_many :records
-has_one :calender
-
-## recordsテーブル
-
-| name                | string    | option                         |
-| ------------------- | --------- | ------------------------------ |
-| weight              | float     | null: false                    |
-| body fat percentage | float     | null: false                    |
-| month               | integer   | null: false                    |
-| date                | integer   | null: false                    |
-| user                | reference | null: false, foreign_key: true |
-
-belong_to :user
-has_one :comments
-
-## commentsテーブル
-
-| name      | string    | option                         |
-| --------- | --------- | ------------------------------ |
-| comment   | text      |                                |
-| user_id   | reference | null :false ,foreign_key :true |
-| record_id | reference | null :false ,foreign_key :true |
-
-belong_to :record
