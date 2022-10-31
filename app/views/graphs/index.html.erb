@@ -1,1 +1,1 @@
-<%= line_chart @record.group_by_day(:record_date).sum(:weight),discrete: true ,precision: 3%>
+<%= line_chart @record, width: "800px", height: "300px" %>

@@ -3,8 +3,8 @@ class Record < ApplicationRecord
   has_many :calenders
   has_many :graphs
 
-  validate :weight
-  validate :body_fat_percentage
+  validate :name
+  validate :value
   validate :record_date
   validate :user
 end
