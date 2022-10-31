@@ -2,6 +2,7 @@ class Record < ApplicationRecord
   belongs_to :user
   has_many :calenders
   has_many :graphs
+  has_many :comment
 
   validate :weight
   validate :body_fat_percentage

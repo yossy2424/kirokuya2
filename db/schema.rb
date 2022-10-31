@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_19_075645) do
+ActiveRecord::Schema.define(version: 2022_10_31_032249) do
 
   create_table "calenders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "start_time"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 2022_10_19_075645) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["record_id"], name: "index_calenders_on_record_id"
     t.index ["user_id"], name: "index_calenders_on_user_id"
+  end
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "record_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["record_id"], name: "index_comments_on_record_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "graphs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -61,5 +70,7 @@ ActiveRecord::Schema.define(version: 2022_10_19_075645) do
 
   add_foreign_key "calenders", "records"
   add_foreign_key "calenders", "users"
+  add_foreign_key "comments", "records"
+  add_foreign_key "comments", "users"
   add_foreign_key "records", "users"
 end
