@@ -4,8 +4,8 @@ class Record < ApplicationRecord
   has_many :graphs
   has_many :comment
 
-  validate :weight
-  validate :body_fat_percentage
+  validate :name
+  validate :value
   validate :record_date
   validate :user
 end
