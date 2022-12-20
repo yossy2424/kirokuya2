@@ -9,7 +9,7 @@ http://54.199.185.166/
 
 ・Basic認証ID:admin
 
-・メールアドレス:test@bbb.com
+・メールアドレス:test@aaa.com
 
 ・パスワード:aaaaaa111
 
